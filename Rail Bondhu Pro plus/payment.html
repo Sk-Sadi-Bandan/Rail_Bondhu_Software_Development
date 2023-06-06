@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-image: url(alistair-rWR9LvWFoBE-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+
+.payment-amount {
+    margin-bottom: 20px;
+}
+
+.confirm-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.home {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #97a797;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#success-message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+#box{
+            background-color: rgba(135, 206, 235, 0.7);
+            text-align: center;
+            margin: auto;
+            width: 400px;
+            padding: 20px;
+            padding-top: 40px;
+            border-radius: 10px;
+
+        }
+
+    </style>
+        <div id="box" >
+    <h1>Select Payment Method</h1>
+
+        <div>
+            <input type="radio" name="payment-method" id="method1" value="method1">
+            <label for="method1">Bkash</label>
+        </div>
+        <div>
+            <input type="radio" name="payment-method" id="method2" value="method2">
+            <label for="method2">Nagad</label>
+        </div>
+        <div>
+            <input type="radio" name="payment-method" id="method3" value="method3">
+            <label for="method3">Rocket</label>
+        </div>
+
+        <h2>Payment Amount:</h2>
+        <p id="amount"></p>
+
+    <button class="confirm-button" onclick="showSuccessMessage()">Confirm Payment</button>
+
+    <div id="success-message"></div>
+
+    <a href="Home.html"><button class="home" >Continue Shopping</button></a>
+</div>
+       
+    <script>
+        function showSuccessMessage() {
+            var successMessage = document.getElementById("success-message");
+            successMessage.innerHTML = "Payment Successful!";
+        }
+
+        // Get the selected payment method and update the payment amount
+        var paymentMethods = document.getElementsByName("payment-method");
+        var amountParagraph = document.getElementById("amount");
+
+        for (var i = 0; i < paymentMethods.length; i++) {
+            paymentMethods[i].addEventListener("change", function () {
+                if (this.checked) {
+                    var orderPagePrice = 2; // Replace with your order page price
+                    amountParagraph.innerHTML =   orderPagePrice.toFixed(2) + "$" ;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

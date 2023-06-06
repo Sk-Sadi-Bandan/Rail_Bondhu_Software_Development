@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Shop Order Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<style>
+    body{
+        margin-top: 10%;
+        background-image: url(alistair-rWR9LvWFoBE-unsplash.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    .product {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.order-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+}
+#box{
+            background-color: rgba(135, 206, 235, 0.7);
+            text-align: center;
+            margin: auto;
+            width: 300px;
+            padding: 20px;
+            padding-top: 30px;
+            border-radius: 10px;
+
+        }
+
+</style>
+<div id="box" >
+
+    <img src="Food/haseeb-jamil-J9lD6FS6_cs-unsplash.jpg" style=" width: 200px;
+    height: 200px;" alt="">
+        <h2 class="product-price" id="price">Price : 2$ <br><br></h2>
+        <button class="order-button" onclick="redirectToPayment()">Order Now</button>
+    </div>
+
+    <!-- <div class="product">
+        <img src="Food/haseeb-jamil-J9lD6FS6_cs-unsplash.jpg" alt="">
+        <h2 class="product-price" id="price">Price : 2$ <br><br></h2>
+        <button class="order-button" onclick="redirectToPayment()">Order Now</button>
+    </div> -->
+
+    <script>
+        function redirectToPayment() {
+            window.location.href = "payment.html";
+        }
+    </script>
+</body>
+</html>
